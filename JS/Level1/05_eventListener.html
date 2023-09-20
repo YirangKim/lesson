@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>alert-box</title>
+    <link rel="stylesheet" href="02_Alertbox.css">
+</head>
+<body>
+    <!-- Todo alert창
+    버튼 1 누르면 "아아디 입력하세요"
+    버튼 2 누르면 "비번 입력하세요"-->
+
+    <div class="alert-box" id="alert">
+    
+        <p id="title">알림창임</p>
+        <!-- 알림창 닫기 -->
+        <!-- addEventListener -->     
+        <button id="close">닫기</button> 
+        <!-- addEventListener 대체 
+        <button onclick="알림창열기('none');">닫기</button> -->
+    </div>
+
+  
+    <button onclick="아이디알림창()">버튼1</button>
+
+    <button onclick="비번알림창()">버튼2</button>
+
+    <script>
+
+    
+    // Mission : addEventListener() 
+    // addEventListener 쓰면  onClick필요없음
+    // addEventListener('???') ??? 감지 
+    
+    // document.getElementById('close') 얘를 
+    // .addEventListener('click' 클릭하면
+    // 파라미터 'click',function()
+    // function 여기 있는 코드 실행해줌
+    // 닫는 코드 : style.display ='none';
+    // 콜백함수 function(){} : 순차적으로 실행하고 싶을 때 
+
+    // 닫기 버튼 클릭하면
+    // alert ckd 숨겨준다
+    
+    document.getElementById('close').addEventListener('click',function(){
+        document.getElementById('alert').style.display ='none';
+    });
+
+
+    function 알림창열기(구멍){
+    document.getElementById('alert').style.display = 구멍;
+    }
+
+    // Todo : 파라미터 문법 축약 해보기
+    // 아이디/비번 입력하셈
+
+    // 함수로 축약
+    //1.p태그 내용을 아이디입력으로 바꿈
+    // document.getElementById('title').innerHTML = '아이디 입력하셈';
+    //innerHTML HTML : 내용 바꾸고 싶을 때 
+    //2. 알림창 띄움 
+    // document.getElementById('alert').style.display = 'block';
+    
+    function 아이디알림창(){
+    document.getElementById('title').innerHTML = '아이디 입력하셈';
+    document.getElementById('alert').style.display = 'block';
+    }
+
+    // getElementsByClassName 셀렉터
+    // id(한개), class(여러개): 인덱싱 필요
+    // document.getElementByClassName('클래스명')[n] 'n': 위에서 몇번째  0이 첫번쨰
+
+    function 비번알림창(){
+    document.getElementById('title').innerHTML = '비번입력하셈~';
+    document.getElementById('alert').style.display  = 'block';
+    }
+    </script>
+
+</body>
+</html>

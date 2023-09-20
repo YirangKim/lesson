@@ -1,0 +1,52 @@
+/* 뼈대용 class, 살점용class 각각 제작
+1. css양 줄어듬
+2. 유지보수 관리  */
+
+/* Utility class */
+/* 폰트 세팅 class : 클래스 뒤에 한칸 띄고 붙이기 */
+.f-small{
+    font-size:12px;
+}
+
+.f-mid{
+    font-size:16px;
+}
+
+.f-lg{
+    font-size:20px;
+}
+
+
+
+/* 고수 */
+.main-btn {
+    padding: 15px;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-red{
+    background: rgb(225, 87, 87);
+}
+
+.btn-blue{
+    background: rgb(63, 136, 203);
+}
+
+/* 초보 
+.btn-red {
+    padding: 15px;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+    background: red;
+}
+
+.btn-blue {
+    padding: 15px;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+    background: rgb(10, 108, 254);
+} */
+

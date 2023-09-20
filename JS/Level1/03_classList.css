@@ -1,0 +1,9 @@
+/* 숨기기 */
+.list-group {
+    display : none;
+  }
+
+/* 보이게 */
+.show {
+    display : block;
+  }

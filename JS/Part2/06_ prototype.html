@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>prototype</title>
+      <!-- Bootstrap CSS -->
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  
+      <!-- jquery 설치 -->
+      <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+      <!-- CSS -->
+      <link href="#" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- chapter : 객체지향2. prototype  -->
+<!-- chapter : 객체지향3. prototype의 특징 몇가지  -->
+
+<script>
+
+//prototype 특징
+// 1)prototype은 함수에만 생성
+// 2) 내 부모 유전자(부모의 prototype)를 검사하고 싶다면 __proto__ : 유전자검사 : 유전자 내 바로 위
+
+// 3) __proto__를 이용해 부모 지정
+var 부모 = { name : 'Kim'};
+var 자식 = {};
+자식.__proto__ = 부모; //나의 부모유전자를 이걸로 해주세요
+
+자식.name; // 
+
+// 4)콘솔창에서 알려주는 prototype chain
+
+
+
+function 기계 (이름){
+    this.name = 이름;
+    this.age = 15;
+    this.sayHi = function(){
+        console.log('안녕하세요' + this.name + '입니다')
+ }
+}
+
+// 상속 구현할 수 있는 prototype 
+// prototype : 유전자
+// 기계(constructor)만들면 prototype이라는 공간이 자동 생김
+// prototype에 값을 추가하면 모든 자식들이 물려받기 가능
+
+기계.prototype.gender = '남';
+
+var 학생1 = new 기계('Park'); 
+var 학생2 = new 기계('Kim');
+
+학생1.gender; // 남, 내가 gender가 없으면 부모 유전자(기계)에서 찾는구나 
+
+//toString 내장함수는 어떻게 동작하는가 
+학생1.toString(); //부모의 부모 유전자가 있음
+
+// arr, obj 상속
+var arr = [1,2,3];
+var arr = new Array(1,2,3); // 상속 array가 만들어지는 방식
+
+//object
+var obj = { name : 'Kim'};
+var obj = new Object(); // 상속 obj가 만들어지는 방식
+
+Array.prototype; // arr부모 유전자에 sort()가 있는가? 여기에 sort 있음 : 부모 
+
+arr.sort();
+// arr.map();
+// arr.push();
+
+</script>
+
+</body>
+</html>

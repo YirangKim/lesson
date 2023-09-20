@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="layout2.css" rel="stylesheet">
+</head>
+<!-- <body>기본 margin 있음 -->
+<body style="margin:0px">
+    <!-- margin collapse 현상 : 박스 2개가 위쪽 테두리가 겹침, 이럴 경우 margin도 합쳐짐 
+    <div class="box1"></div>
+    <div class="box2"></div>
+-->
+
+    <div class="main-background">
+        <h4 class="main-title">Buy our shoes!</h4>
+        <p class="main-content">ddddddddddddddddddddddddddddddddddddddddddddddsssssssssssssssssssssssssssssssssssddddddddddddddddddddddddddddddd</p>
+        <button class="main-button">구매하기</button>
+    </div>
+    <!-- Todo -->
+    <div class="explain-box">
+       
+            <h4>How we design our shoes</h4>
+            <p>ddddddddddddddddddddddddddddddddddddddddddddddd</p>
+  
+    </div>
+
+    <!-- form & input
+    form actioin="경로~~~" 작성한 내용이 어떤 서버경로로 전달될지 
+    input type=text password email date check 등
+    input value : 미리 채워진 값
+    placeholder : 미리 배경값
+    name =age, school 서버개발시-->
+
+    <form>
+        <input type="text" value="aaaaaa" class="text-input">
+        <input type="text">
+        <input type="submit">
+        <button type="submit">전송</button>
+        <input>
+        <option>ddddd</option>
+        <option>ddddd</option>
+        <option>ddddd</option>
+        <textarea row="10"></textarea>
+    </form>
+
+    <!-- Todo -->
+    <div class="form-background">
+        <div class="form-white">
+        <form>
+            <div class="w-100">
+            <h3>contact us</h3>
+            <p>Your Email</p>
+            <input class="form-input" placeholder="이메일 입력" type="email">
+            </div>
+
+            <div class="w-50">
+                <label>First name</label>
+            <input class="form-input"type="text">
+            </div>
+
+            <div class="w-50">
+                <label>Last name</label>
+                <input class="form-input" type="text">
+            </div>
+
+            <!-- float: left; 다음에 빈 div에 clear: both -->
+            <div style="clear: both"></div>
+            
+            <div class="w-100">
+                <label>Message</label>
+                <textarea
+                class="form-input form-long"></textarea>
+                <div class="form-check">
+                    <input id="sub" type="checkbox">
+                    <label for="sub">Subscribe</label>
+                </div>
+    
+                <div class="form-button">
+                <button class="yellow-button" type="submit"> 전송</button>
+                </div>
+    
+                <div style="clear:both;"></div>
+            </div>
+
+            <!-- input-label 유용함 input id="sub" 
+            label for="sub"  -->
+         
+        </div> 
+        </form>
+        </div>
+    </div>
+</body>
+</html>

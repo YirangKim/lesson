@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>emailCheck</title>
+</head>
+<body>
+  <!-- chapter 정규식으로 이메일형식 검증해보기 -->
+
+    <div class="black-bg">
+        <div class="white-bg">
+          <h4>로그인 하세요</h4> 
+          <!-- form은 서버로 유저정보 전송 -> action -->
+          <!-- action="success.html -->
+          <form >
+
+            <div class="my-3">
+              <input type="text" class="form-control" id="email" name="email">
+            </div>
+
+            <div class="my-3">
+               <input type="password" class="form-control" id="pw" name="password">
+            </div>
+             <!-- <form>안의 <button> 주의 : 오류  
+               전송 버튼 type="submit"
+               일반 버튼 type="button"-->
+    
+             <button type="submit" class="btn btn-primary" id="send">전송</button>
+
+             <button type="button" class="btn btn-danger" id="close">닫기</button>
+          </form> 
+        </div>
+    </div> 
+
+    <script>
+
+$('form').on('submit', function(e){
+  if (document.getElementById('email').value == '') {
+    alert('아이디 입력하쇼');
+  } 
+  if (document.getElementById('pw').value == ''){
+    alert('비번 입력하쇼')
+  }
+});
+
+    </script>
+</body>
+</html>

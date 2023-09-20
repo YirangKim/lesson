@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>for반복문</title>
+      <!-- Bootstrap CSS -->
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  
+      <!-- jquery 설치 -->
+      <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+      <!-- CSS -->
+      <link href="#" rel="stylesheet">
+</head>
+
+<body>
+<!-- chapter : for in / for of 반복문과 enumerable, iterable 속성 -->
+
+<script>
+  //반복문 용도
+  // 1코드 여러번 실행할 때
+  // 2 array, object자료 꺼내쓸 때 
+
+
+  // for of 반복문  : 
+  // 1.Array, 문자, argument, NodeList, Map, Set
+ // 2. iterable한 자료형에만 사용가능
+  var 어레이 = [2,3,4,5];
+
+  // 어레이 안에있던 하나하나의 자료를 의미 
+  // 'ㄴㄴㄴㅇㅇㅇㅇㅇ' 하나하씩 의미 : ㄴ, ㄴ, ㄴ, ㅇ, ㅇ
+  
+  for (var 자료 of '어레이') {
+    console.log(자료)
+  }
+
+  //여러개 자료 찾는
+//   document.getElementByIdClassName(); 
+//   document.querySelectorAll
+  
+
+  // iterator 내부데이터 출력을 도와주는 함수 
+  어레이[Symbol.iterator]();
+
+  // for in : object에 있던 값을 전부 하나씩 꺼내서 사용할 때
+  // 1. enumerable 한것만 반복
+  // 2. 부모의 prototype도 반복
+  // 3. Object자료형에만 씀 , Array에는 for, forEach
+
+
+    class 부모 {
+
+    }
+    부모.prototype.name = 'Park'; // 상속
+
+    var 오브젝트 = new 부모();
+    // var 오브젝트 = { name : 'Kim', age : 30 }; //오브젝트 2개 
+
+    //key 작명, 오브젝트 :반복할 object 개수 
+    for (var key in 오브젝트) {
+    // 내가 직접가지고 있는 값만 반복시키고 싶으면 .hasOwnProperty(key)
+    if ( 오브젝트.hasOwnProperty(key)){
+         console.log(오브젝트[key]); // 대괄호[] key 
+        }
+    }  
+ 
+    // 오브젝트.name;
+    // 오브젝트['name'];
+
+</script>
+
+</body>
+</html>

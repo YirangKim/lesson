@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="Table.css" rel="stylesheet">
+</head>
+<body>
+    <div>
+        <!-- 표 만들땐 table
+        가로행 tr, 세로행 td
+        제목 세로 열 th
+        <tr>만들고 <td>
+            <tr>
+                <td></td>
+            </tr> -->
+
+        <table>
+            <!-- thead 최상단 분류 -->
+            <thead>
+                <!-- 1행 -->
+                <tr>
+                    <h3>Your table</h3>
+                    <th><p>titletitle</p>
+                        <p>titletitle</p></th>
+                    <!-- vertical-align 글씨간의 세로 정렬 할 때
+                    inline/inline-block 요소 간 세로 정렬 -->
+                    <td style="vertical-align: middle">222222</td>
+                    <td>3</td>
+                </tr>
+            </thead>
+
+            <tbody>
+                <!-- 2행 -->
+                <tr>
+                    <th>4</th>
+                    <td>5</td>
+                    <td>6</td>
+                </tr>
+            
+
+                <!-- tbody 분류 -->
+            
+                <tr>
+                        <th>7</th>
+                        <td>8</td>
+                        <td>9</td>
+                </tr>
+            </tbody>
+            
+        </table>
+    </div>
+
+      
+    <div> <img src="https://mdn.mozillademos.org/files/12245/frame_image.svg" width="32" height="32"> <span style="vertical-align: middle">image with a default alignment.</span>
+    </div> 
+    
+    <!-- display:inline 항상 옆으로 채워지는 폭과 너비가 없는 요소
+    폭과 너비 지정 안됨  -->
+    <span>가나다라마바사아</span>
+    <span>가나다라마바사아</span>
+    <span>가나다라마바사아</span>
+    <span>가나다라마바사아</span>
+    <span>가나다라마바사아</span>
+
+    <!-- 참고 div로 표만들기 -->
+    <div styel="display: table">
+        <h3> div로 표만들기 </h3>
+        <div style="display: table-row">
+            <div style="display: table-cell">21</div>
+            <div style="display: table-cell">23</div>
+        </div>
+    </div>
+</body>
+</html>

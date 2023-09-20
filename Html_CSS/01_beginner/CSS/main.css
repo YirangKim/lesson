@@ -1,0 +1,92 @@
+.profile {
+    width: 50px; 
+    display:block; 
+    margin-left:auto; 
+    margin-right:auto;}
+
+/* 이미지 가운데 정렬 방법
+display:block; 
+margin-left:auto; 
+margin-right:auto; */
+
+
+.title {
+    font-size: 16px;
+    color:red;
+    letter-spacing:-1px;
+    text-align: center;
+}
+
+.box {
+    width:100px;
+    background:cadetblue;
+    margin: 20px;
+    padding: 40px;
+    border: 4px solid black;
+    border-radius: 15px;
+    /* div, p , h
+    display:block; 기본으로 있음 : 가로행 다 차지함*/margin-left:auto; margin-right:auto; 
+    /* 상속: font size, color, family*/
+    font-size: 10px;
+    /* 그림자 */
+    box-shadow: 5px 5px 5px 5px gray; 
+}
+
+
+
+/* 여백 
+margin: 상하좌우 여백
+padding: 상하좌우 안쪽 여백*/
+
+.container {
+    width:800px;
+    border: 2px solid black;
+}
+
+.header {
+    width:100%;
+    height:100px;
+    background: aquamarine;
+}
+
+/* div 가로 배치 
+1: float 그리고 clear:both 
+2: display: inline-block; */
+
+/* 1)disply:block 한행 전부 차지 
+2)display:inline-block 내 크기 만큼 차지 : 공백 제거필요!!!
+a박스사이 주석 기호 활용
+b부모태그에 font-size:0px; */
+
+/* div 박스 옆으로 이동시 float 필요!
+ display:block; 라서
+가로 다 차지, 밑으로만 떨어짐 ->  */
+
+/* 부모요소의 100% 넘어가면 오류 뜸 예)width:30%; 80%; 은 110%*/
+.left-menu {
+    width: 20%;
+    height: 400px;
+    background: cornflowerblue;
+    /* float:left 요소를 붕 띄워서 왼쪽 정렬 */
+    /* float:left; */
+    display: inline-block;
+}
+
+/* baseline이 옆에 존재하면 display:inline-block요소들이 baseline 위에 오려고 함*/
+
+.right {
+    width:80%;
+    height: 400px;
+    background: coral;
+    /* float:left;  */
+    display: inline-block;
+    vertical-align: top;
+}
+
+/* clear:both float다음에 오는 요소에게 주면 해결*/
+.footer {
+    width:100%;
+    height:100px;
+    background-color: grey;
+    /* clear: both; */
+}

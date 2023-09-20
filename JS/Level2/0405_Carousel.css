@@ -1,0 +1,22 @@
+.slide-container {
+    width: 300vw;
+
+    /* transform: translateX(-100vw); */
+    /* margin-left: -100vw; */
+    /* 최종 화면 */
+    transition: all is;
+}
+
+/* 옆으로 배치 : float: left; */
+.slide-box {
+    width: 100vw;
+    float: left;
+}
+
+.slide-box img{
+    width: 100%;
+}
+
+.lorem {
+    margin-top: 1000px;
+}

@@ -1,0 +1,10 @@
+.alert-box {
+    background-color: skyblue;
+    padding: 20px;
+    color: white;
+    border-radius: 5px;
+    /* 알림창
+     숨기기 display: none;
+     보여주기 display: block; */
+    display: none;
+}

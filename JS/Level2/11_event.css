@@ -1,0 +1,46 @@
+.black-bg {
+    width : 100%;
+    height : 100%;
+    position : fixed;
+    background : rgba(0,0,0,0.5);
+    /* 모달창이 넘 뒤에 있으면 CSS에서 z-index 높이기 */
+    z-index : 6;
+    padding: 30px;
+    /* display: none;
+    애니메이션 줄때는 visibility: hidden; */
+    visibility: hidden; 
+    opacity: 5;
+    transition: all 0.1s;
+  }
+
+.show-modal {
+    visibility: visible; 
+    /* = display: block; */
+    opacity: 1;
+}
+
+.white-bg {
+    background: white;
+    border-radius: 5px;
+    padding: 30px;
+  } 
+
+#login {
+    /* display: flex; */
+    width: 30%;
+    height:60px;
+    /* align-items: center;
+    justify-content: center; */
+    margin: 0 auto;
+    /* padding: 30px; */
+    border-style: none;
+    background-color: skyblue;
+    /* font-weight: 700; */
+    /* font-size: 30px; */
+    border-radius: 10px;
+}
+
+.main-bg {
+  padding: 100px 20px;
+  background : lightgrey;
+}

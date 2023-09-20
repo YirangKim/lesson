@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>emailCheck</title>
+</head>
+<body>
+  <!-- chapter 정규식으로 이메일형식 검증해보기 -->
+
+    <div class="black-bg">
+        <div class="white-bg">
+          <h4>로그인 하세요</h4> 
+          <!-- form은 서버로 유저정보 전송 -> action -->
+          <form action="success.html">
+
+            <div class="my-3">
+              <input type="text" class="form-control" id="email" name="email">
+            </div>
+
+            <div class="my-3">
+               <input type="password" class="form-control" id="pw" name="password">
+            </div>
+             <!-- <form>안의 <button> 주의 : 오류  
+               전송 버튼 type="submit"
+               일반 버튼 type="button"-->
+    
+             <button type="submit" class="btn btn-primary" id="send">전송</button>
+
+             <button type="button" class="btn btn-danger" id="close">닫기</button>
+          </form> 
+        </div>
+    </div> 
+
+    <script>
+
+      $('form').on('submit', function(e){
+  
+        var 아이디 = document.getElementById('email').value.trim();
+        var 비번 = document.getElementById('pw').value;
+
+        if(아이디 == ''){
+          alert('아이디입력안함');
+          e.preventDefault(); // 폼 제출을 막음
+        }
+
+        if ( /\S+@\S+\.\S+/.test(아이디)){
+          alert('이메일형식아님');
+          e.preventDefault(); // 폼 제출을 막음
+        }
+
+        if (!/[A-Z]/.test(비번)) {
+          alert('비밀번호에 대문자가 없습니다.');
+          e.preventDefault(); // 폼 제출을 막음
+        }
+
+        // // 폼 제출 기본 동작을 막음
+        // e.preventDefault();
+
+        // // 아이디 공백이면 알림창 띄우기
+        // if(입력한값 == ''){alert('아이디입력안함');}
+
+        // // 정규식으로 이메일형식 검증 : /\S+@\S+\.\S+/
+        // // 어쩌구@어쩌구.어쩌구 : 모든 문자 사이에 @ 그리고 .이라는 특수문자
+        // if ( /\S+@\S+\.\S+/.test(입력한값)){
+        // alert('이메일형식아님');
+        // }
+    });
+    </script>
+</body>
+</html>

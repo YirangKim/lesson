@@ -1,0 +1,169 @@
+/* 초기 설정 body, div
+호환성 이슈 해결책 : normalize.css */
+
+body {
+    margin:0px;
+}
+
+div, input, textarea {
+    box-sizing: border-box;
+}
+
+
+.main-background {
+    width:100%;
+    /* 배경이미지는 꽉차지 않으면 반복 */
+    height:500px;
+    background-repeat: no-repeat; 
+    /* ../ 상위폴더로 이동 */
+    background-image: url(../img/shoes.jpeg);
+    /* cover : 배경짤려도 상관없으니 빈공간 배경으로 꽉 채워라 */
+    /* contain: 배령짤리면 안된다 */
+    background-size: cover;
+    background-position: center;
+    /* background-size: 100%; */
+
+    /* 그림 보정, 안에 글씨 있으면 글씨에도 필터입혀짐
+    filter: brightness(50%) */
+    /* margin collapse */
+    padding:1px;
+    /* 부모 : absolute */
+    position: relative;
+}
+
+.main-title {
+    color: white;
+    font-size: 40px;
+    /* margin collapse 버그
+    해결 방법 : 박스 떨어트리면 값 적용됨
+    margin 큰거 우선 적용*/
+    margin-top: 200px;
+    text-align: center;
+}
+
+/* 
+.box1  {
+    width:300px;
+    height:300px;
+    background:skyblue;
+    margin-bottom: 50px;
+}
+
+.box2 {
+    width: 300px;
+    height:300px;
+    background:blue;
+    /* margin-top: 30px; */
+*/
+
+.main-content {
+    width:600px;
+}
+
+.main-button {
+    padding: 15px;
+    font-size: 20px;
+    background: white;
+    /* border: none; */
+    border-radius: 5px;
+    /* position 원하는 위치로
+    1)좌표이동가능
+    2)공중에 뜸 (글 위에 요소 올수있음)
+    relative : 내 원래 위치를 기준으로 이동하세요 
+    static:좌표이동 x
+    fixed: 현재 화면이 기준 고정 예) 상단고정 내용
+    absolute: 내 부모( position: relative; 가진) 태그가 기준 */
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 150px;
+    /* z-index: 5; */
+  
+}
+
+.explain-box {
+    width: 80%;
+    /* max-width 최대폭
+    min-width 최소폭*/
+    max-width: 600px;
+    /* box-sizing : padding. border 포함함 */
+    margin: auto;
+    padding: 20px;
+    text-align: center;
+    background-color:#eee;
+    position: relative;
+
+    /* z-index
+    높을수록 앞에 옴 */
+    /* z-index: 1; */
+}
+
+/* 
+p {
+    color:#ffffff;
+    text-align: center;
+} */
+
+/* input 중 type 지정 가능 input[type=text]  */
+.text-input {
+    padding: 10px;
+    font-size: 20px;
+    border: 2px solid black;
+    border-radius: 5px;
+}
+
+/* 배경 디자인  */
+.form-background {
+    background-color: black;
+    padding: 30px;
+}
+
+.form-white {
+    background-color:white;
+    padding: 30px;
+    width:80%;
+    max-width:600px;
+    margin: auto;
+}
+
+
+.form-input {
+    width: 100%;
+    /* 실제 width는 100%에 + padding 20px -> box-sizing: border-box; */
+    padding: 10px;
+    font-size: 20px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+
+.w-50 {
+    width:50%;
+    float: left;
+    padding:10px 
+}
+
+.w-100 {
+    width:100%;
+    padding:10px
+}
+
+
+.form-check {
+    width:50%;
+    float:left;
+}
+
+.form-button {
+    width:50%;
+    float:left;
+}
+
+.yellow-button {
+    padding:10px;
+    display: block;
+    margin-left: auto;
+    background-color:rgba(252, 208, 33, 0.697);border-style: none;
+    border-radius: 5px;
+}

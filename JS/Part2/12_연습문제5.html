@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>연습문제5</title>
+      <!-- Bootstrap CSS -->
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  
+      <!-- jquery 설치 -->
+      <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+      <!-- CSS -->
+      <link href="#" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- chapter : class, extends, getter, setter 연습문제 답안 -->
+
+<script>
+// super() 용도1
+// class : 상속
+// prototype : 유전자 검사
+// constructor : Object 복사기계 
+
+// 1. 직접 class 구조 만들어보기
+// 여러 강아지 정보들을 담은 유사한 오브젝트 자료형 만들기
+
+
+// var 강아지1 = { type : '말티즈', color : 'white' };
+// var 강아지2 = { type : '진돗개', color : 'brown' }; 
+
+    class Dog {
+    constructor(타입, 칼라){
+        this.type = 타입;
+        this.color = 칼라;
+    }
+    한살먹기(){
+        //한살먹기를 고양이들이 쓰면, 강아지들이 쓰면 에러 출력
+        // instanceof : a instanceof b 
+        // a가 b로부터 생성된 오브젝트인지 아닌지를 true/false
+        if(this instanceof Cat){
+        // 1살 더해주고
+            this.age++
+      }
+     }
+    }
+    var 강아지1 = new Dog('똥개', 'black');
+
+// 2. 고양이관련 object
+
+// var 고양이1 = { type : '코숏', color : 'white', age : 5 };
+// var 고양이2 = { type : '러시안블루', color : 'brown', age : 2 }; 
+
+//extends 상속
+
+    class Cat extends Dog {
+    constructor(타입, 칼라, 나이){
+        super(타입, 칼라); //Dog의 constructor()를 그대로 복붙했다~
+        this.age = 나이;
+    }
+
+    }
+
+    // 내가 한거
+    // class Cat  {
+    //     constructor(타입, 컬러, 나이){
+    //         this.type = 타입;
+    //         this.color = 컬러;
+    //         this.나이 = 나이;
+    //     }
+    // }
+
+var 고양이1 = new Cat('코숏', 'white', 5);
+
+// 4 get/set 게임
+//1) 모든 Unit의 인스턴스는 공격력, 체력 속성이 있으며 기본 공격력은 5, 기본 체력은 100으로 설정
+// 2) 모든 Unit의 인스턴스는 전투력을 측정해주는 battlePoint라는 getter가 있습니다.
+// (3) 모든 Unit의 인스턴스는 heal이라는 setter가 있습니다.
+class Unit {
+    constructor(){
+        // 모든 Unit 인터스트 공격력, 체력 속성
+        // 기본 공격력 5, 체력 100
+        this.체력 = 100;
+        this.공격력 = 5;
+    }
+
+    // 모든 Unit인스턴스 전투력 측정해주는 battlePoint getter
+    get battlePoint(){
+        //공격력과 체력을 더한 값을 콘솔창에 출력
+    return this.체력 + this.공격력;
+    }
+
+    // 모든 Unit인스턴스 heal이라는 setter
+    set heal(a){
+        this.체력 = this.체력 + a;
+    }
+};
+
+var 쌘애 = new Unit();
+
+// 공격력과 체력을 더한 값을 콘솔창에 출력
+console.log(쌘애.battlePoint);
+// 체력 속성이 50 증가
+쌘애.heal = 50;
+
+
+</script>
+</body>
+</html>
+
+

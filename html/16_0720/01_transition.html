@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>01_css애니메이션_transition(전환속성) p.401</title>
+  <style>
+    .box01{
+      width:100px;height:50px;
+      background:#ff0;
+      border:1px solid #f00;
+      transition:1s;
+    }
+    .box01:hover{
+      width:100%;
+    }
+
+    /* 내비게이션 서식 */
+    .gnb{ width:1000px; border:1px solid #000;height:50px;}
+    .gnb > ul{
+      display:flex;
+      justify-content:space-evenly;
+    }
+    .gnb > ul > li{
+      width:13%;
+      list-style:none;
+      position:relative; /* 라인의 기준 */
+    }
+    .gnb > ul > li > a{
+      color:#333;
+      font-weight:bold;
+      text-decoration:none;
+      text-transform:uppercase;
+      position:absolute;z-index:1;
+      width:100%;
+    }
+    .gnb > ul > li::after{
+      content:"";
+      display:block;
+      width:120px;height:30px;
+      transform:scaleY(0);
+      background:#f00;
+      position:absolute;top:-4px;left:-20px;
+      transition:0.5s;
+      z-index:0;
+    }
+    .gnb > ul > li:hover::after{
+      transform:scaleY(1);
+    }
+    .gnb > ul > li > a:hover{}
+
+
+    /* 이미지에 마우스 오버시 텍스트 정보 날아오게 하기 */
+    #box02{
+      width:500px;height:300px;
+      border:3px solid #000;
+      position:relative; /* span의 기준 */
+      overflow:hidden;
+    }
+    #box02 *{margin:0px;padding:0px;}
+    #box02 span{
+      display:block;
+      width:100%;line-height:40px;
+      color:#fff;
+      background:rgba(0,0,0,.8);
+      text-indent:10px;
+      position:absolute;
+      bottom:-40px;
+      transition:0.3s;
+    }
+    #box02:hover span{
+      bottom:0px;
+    }
+    #box02 img{
+      display:block;
+      transition:0.3s;
+      filter: brightness(0.7);
+    }
+    #box02:hover img{
+      transform: scale(1.15); /* 원래크기의 115% 크기로 크게 */
+      filter: brightness(1);
+    }
+  </style>
+</head>
+<body>
+  <h2>01_css애니메이션_transition(전환속성) p.401</h2>
+  <pre>
+    CSS3 추가속성
+1. border-radius(모서리 둥글게)
+2. background(배경색, 배경이미지 2장이상)
+3. text effect(그림자)
+4. Transform(변형, 회전)
+5. Transition(전환, 애니메이션, 시간)
+6. Animation(키프레임) p.225
+7. Multiple Column(다단)
+8. Usesr Interface
+box-sizing, resize, outline
+
+calc(width-20%);
+    </pre>
+
+    <p>
+      transition(전환)속성은 사용자가 선택한 html요소에 마우스를 올리거나 클릭을 하였을 때 첫장면에서 마지막 장면으로 자연스럽게 넘어가는 효과를 구현하고자 할 때 사용한다.
+    </p>
+    <p>
+      모바일 토글메뉴 클릭시 부드럽게 나오는 내비게이션, pc화면에서 메인 내비게이션 마우스 오버시 나오는 서브메뉴, 메인화면에 좌, 우 버튼 클릭시 슬라이드 되는 이미지 등 다양한 곳에 활용이 가능하다.
+    </p>
+
+    <h3>1. 전환속성을 사용하여 마우스 오버시 박스크기 변경하기</h3>
+    <div class="box01"></div>
+
+    <h3>2. 전환속성을 사용하여 메뉴 마우스 오버시 밑줄 나오게 하기</h3>
+    <nav class="gnb">
+      <ul>
+        <li><a href="#" title="메뉴">home</a></li>
+        <li><a href="#" title="메뉴">about us</a></li>
+        <li><a href="#" title="메뉴">about us</a></li>
+        <li><a href="#" title="메뉴">about us</a></li>
+        <li><a href="#" title="메뉴">about us</a></li>
+        <li><a href="#" title="메뉴">about us</a></li>
+      </ul>
+    </nav>
+
+    <h3>3. 전환속성을 사용하여 이미지 크게, 캡션 부드럽게 나오게 하기</h3>
+    <div id="box02">
+      <a href="test.html" title="바로가기">
+        <img src="./images/photo.jpg" alt="">
+        <span>7월 초특가 이벤트 할인</span>
+      </a>
+    </div>
+
+
+</body>
+</html>

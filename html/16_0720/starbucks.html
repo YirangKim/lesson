@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>스타벅스 모바일 웹내비게이션</title>
+  <!-- 초기화 -->
+  <link href="./css/reset.css" rel="stylesheet" type="text/css">
+  <style>
+    input, textarea {
+  -webkit-appearance: none;
+  border-radius: 0;
+}
+    body{
+      font-family: "맑은 고딕",arial,sans-serif;
+      font-size:12px;
+      color:#333;
+    }
+    a{text-decoration:none;color:#333;}
+    #toggle{display:none;}
+    header{
+      height:70px;
+      background:#f6f5ef;
+      position:relative; /* 부모요소에 기준을 설정함 */
+    }
+    header h1{width:54px;}
+    header h1 img{
+      width:100%;
+      padding:8px 0px 0px 10px;
+    }
+    .login_icon, .location_icon{position:absolute;}
+    header .login_icon{right:130px;top:14px;}
+    header .location_icon{right:78px;top:15px;}
+
+    .login_icon img{width:32px;padding-top:2px;}
+    .location_icon img{width:28px;}
+    header .total_mnu{
+      position:absolute;
+      right:12px;top:20px;
+      cursor:pointer;
+    }
+    header .total_mnu img{width:42px;}
+
+    /* 내비서식 */
+    header nav{
+      width:100%;height:100%;
+      position:fixed;
+      top:0px;left:100%;
+      background:rgba(0,0,0,.7);
+      transition:0.5s;
+      z-index:1000;
+    }
+
+    /* 햄버거 메뉴를 클릭하면 체크박스가 체크되면서 header의 자손 nav의 위치가 left:0이 되게 한다.*/
+    #toggle:checked + header nav{left:0px;}
+
+    .gnb ul{
+      background-color:#333;
+      width:70%;height:100%;
+      position:absolute;
+      right:0px;top:0px;
+    }
+    .gnb li:first-child, .gnb li:nth-child(2){
+      background-color:#2d2926;
+    }
+    .gnb li{
+      line-height:50px;
+      padding:0px 15px;
+      border-bottom:1px solid rgb(82, 82, 82);
+    }
+    .gnb li a{
+      color:#fff;
+      font-size:16px;
+      text-transform:uppercase; /* 모두 대문자로 전환 */
+    }
+    .gnb li a:hover{text-decoration:underline;}
+    .gnb li:first-child{
+      padding:12px 0px;
+      text-align:center;
+    }
+    .gnb li:first-child a, .gnb li:nth-child(2) a{
+      text-transform:capitalize; /*  앞글자만 대문자로 전환 */
+    }
+
+    .gnb ul input{
+      height:30px;padding:0px 10px;
+      border-radius:3px;
+      border:none;
+    }
+    .gnb ul input[type='search']{width:60%;margin-right:10px;}
+    .gnb ul input[type='button']{
+      width:70px;background-color:rgb(121, 121, 121);color:#fff;
+      text-transform: capitalize;
+    }
+
+    .gnb ul li i.fas{
+      float:right;font-size:26px;
+      transform:translateY(12px); /* 위치 이동하기 */
+    }
+
+    .gnb .c_btn{
+      font-size:40px;
+      color:#fff;
+      position:absolute;top:3%;left:15%;
+    }
+
+    main{}
+    
+    .slide{
+      height:21vh;
+      background-image:url('./images/m_main1.jpg');
+      background-repeat: no-repeat; /* 이미지 반복하지 않기 */
+      background-size:100%;
+      animation :slide 20s infinite;
+    }
+    .slide > h2{display:none;}
+
+    /* 애니메이션 만들기 */
+    @keyframes slide{
+      0%{background-image:url('./images/m_main1.jpg');}
+      30%{background-image:url('./images/m_main1.jpg');}
+      35%{background-image:url('./images/m_main1.jpg');}
+      60%{background-image:url('./images/m_main1.jpg');}
+      66%{background-image:url('./images/m_main1.jpg');}
+      95%{background-image:url('./images/m_main1.jpg');}
+      98%{background-image:url('./images/m_main1.jpg');}
+      100%{background-image:url('./images/m_main1.jpg');}
+    }
+
+
+
+    /*		콘텐츠 서식 */
+		section{
+			clear:both;padding:10px 10px;
+		}
+		
+		section > h2, section > h2 + p{
+			background-color:#e0dfdf;
+			text-indent:15px;
+		}
+    section > h2{
+      font-size:16px;
+      font-weight:bold;
+    }
+		section > h2 img{
+			max-width:40px;
+			transform: translateY(8px);
+		}
+		section > h2 + p{
+			line-height:40px;
+		}
+		
+/*		제품목록 */
+		.cold_coffee{
+      padding-top:10px;
+      display:flex;
+      flex-wrap:wrap;
+    }
+		.cold_coffee > li{
+			position:relative;
+			width:47.92%;
+			/* float:left; */
+/*			display:inline-block;*/
+		}
+		.cold_coffee > li img{
+			width:100%;/* 이미지 크기 부모크기 따라감 */
+			transition:0.5s;
+		}
+		.cold_coffee > li img:hover{
+			transform:scale(1.2);
+		}
+		.cold_coffee > li:nth-child(2n+1){
+			margin-right:4.08%;
+		}
+		
+		.cold_coffee > li p{
+			font-size:16px;
+			font-weight:bold;
+			text-align:center;line-height:40px;
+			background-color:#ffffff;
+			transform:translateY(-3px);
+		}
+		.cold_coffee > li a{
+
+			display:block;
+			overflow:hidden;/* 이미지가 커질때 숨기기 */
+		}
+		
+/*		NEW아이콘 */
+		.new_icon{
+			background-color:#007042;
+			color:#ffffff;
+			text-transform: uppercase;
+			font-size:16px;font-weight:bold;
+			padding:17px 8px;
+			border-radius:50%;
+			position:absolute;
+			bottom:50px;left:10px;
+			z-index:100;
+		}
+
+
+    footer{background:#333;}
+    footer > address{
+      text-align:center;
+      color:#fff;
+      line-height:50px;
+      font-style:normal;
+    }
+  </style>
+  <!-- 아이콘 폰트 CDN 주소 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+  <input type="checkbox" id="toggle">
+  <header>
+    <h1>
+      <a href="index.html" title="메인페이지로 바로가기">
+        <img src="./images/logo.png" alt="상단로고">
+      </a>
+    </h1>
+
+    <a href="#" title="로그인" class="login_icon">
+      <img src="./images/user.svg" alt="로그인" >
+    </a>
+
+    <a href="#" title="지점찾기" class="location_icon">
+      <img src="./images/maps-and-flags.svg" alt="지점찾기">
+    </a>
+
+    <label for="toggle" class="total_mnu">
+      <img src="./images/menu.svg" alt="전체메뉴">
+    </label>
+
+    <!-- 내비게이션 박스 -->
+    <nav class="gnb">
+      <label for="toggle" class="c_btn">
+        <img src="./images/close.png" alt="">
+      </label>
+
+      <ul>
+        <li><input type="search"><input type="button" value="search"></li>
+        <li><a href="#" title="">my starbucks <i class="fas fa-angle-down"></i></a></li>
+        <li><a href="#" title="">coffee<i class="fas fa-angle-down"></i></a></li>
+        <li><a href="#" title="">menu<i class="fas fa-angle-down"></i></a></li>
+        <li><a href="#" title="">store<i class="fas fa-angle-down"></i></a></li>
+          <li><a href="#" title="">responsibility<i class="fas fa-angle-down"></i></a></li>
+        <li><a href="#" title="">store<i class="fas fa-angle-down"></i></a></li>
+          <li><a href="#" title="">my starbucks rewards<i class="fas fa-angle-down"></i></a></li>
+          <li><a href="#" title="">what's new<i class="fas fa-angle-down"></i></a></li>
+      </ul>
+    </nav>
+
+  </header>
+
+  <main>
+    <article class="slide">
+      <h2>메인 슬라이드</h2>
+    </article>
+
+    <section>
+      <h2>콜드브루 커피<img src="./images/logo_decaf.png" alt=""></h2>
+      <p>디카페인 에스프레소 샷 추가 가능(일부음료 제외)</p>
+      
+      <ul class="cold_coffee">
+        <li><a href="#" title=""><img src="./images/01.jpg" alt=""></a>
+          <span class="new_icon">new</span>
+            <p>제품명</p>
+        </li>
+        <li><a href="#" title=""><img src="./images/02.jpg" alt=""></a>
+            <p>제품명</p>
+        </li>
+        <li><a href="#" title=""><img src="./images/03.jpg" alt=""></a>
+            <p>제품명</p>
+        </li>
+        <li><a href="#" title=""><img src="./images/04.jpg" alt=""></a>
+            <p>제품명</p>
+        </li>
+        <li><a href="#" title=""><img src="./images/05.jpg" alt=""></a>
+            <p>제품명</p>
+        </li>
+        <li><a href="#" title=""><img src="./images/06.jpg" alt=""></a>
+            <p>제품명</p>
+        </li>
+        <li><a href="#" title=""><img src="./images/07.jpg" alt=""></a>
+          <p>제품명</p>
+        </li>
+        <li><a href="#" title=""><img src="./images/08.jpg" alt=""></a>
+          <p>제품명</p>
+        </li>
+        <li><a href="#" title=""><img src="./images/09.jpg" alt=""></a>
+          <p>제품명</p>
+        </li>
+        <li><a href="#" title=""><img src="./images/10.jpg" alt=""></a>
+          <p>제품명</p>
+        </li>
+        <li><a href="#" title=""><img src="./images/11.jpg" alt=""></a>
+          <p>제품명</p>
+        </li>
+        <li><a href="#" title=""><img src="./images/12.jpg" alt=""></a>
+          <p>제품명</p>
+        </li>
+      </ul>      
+    </section>
+  </main>
+
+  <footer>
+    <address>Copyright&copy;2022 starbucks allrights reserved.</address>
+  </footer>
+</body>
+</html>

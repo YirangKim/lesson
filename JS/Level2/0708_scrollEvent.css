@@ -1,0 +1,26 @@
+:root {
+    /* 부트스트랩 스크롤 스무스 제거 */
+    scroll-behavior: auto;
+}
+
+.navbar {
+    /* 상단 고정 */
+    position: fixed;
+    width: 100%;
+    /* z-index  앞으로 보내기 */
+    z-index : 5
+}
+
+/*스크롤바 내리면 로고 작게*/
+.navbar-brand {
+    /* 애니메이션 전 시작스타일*/
+    font-size: 30px;
+    transition: all 1s;
+
+    /* Todo 스크롤바 내리면 폰트 작게  */
+
+}
+/* 
+.lorem {
+    margin-top: 300px;
+} */

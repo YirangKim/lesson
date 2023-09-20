@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>constructor</title>
+      <!-- Bootstrap CSS -->
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  
+      <!-- jquery 설치 -->
+      <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+      <!-- CSS -->
+      <link href="#" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- chapter : 객체지향1. Object 생성기계인 constructor를 만들어 써보자 -->
+
+<script>
+// constructor
+// object를 마구 복사하고 싶을때 사용
+// 비슷한 object 여러개 만들 때 
+
+var 사람 = { name : 'Kim'};
+var 사람 = { name : 'Kim'};
+var 사람 = { name : 'Kim'};
+
+// constructor 문법 : function
+
+// 예시 1 학생 출석부 만들기 : 비슷한 학생 object여러개 만들려면?
+// function 대문자 Student
+// var 학생1 = { name : 'kim', age : 15 }
+// constructor는 this가 필요함 
+// this는 새로생성되는 object를 뜻함
+// this: 기계에서 새로생성되는 object(instance)
+function 기계(){
+    this.name = 'kim';
+    this.age = 15;
+}
+
+// new 사용
+var 학생1 = new 기계();
+
+// Mission : 쇼핑몰에 쓸 상품데이터를 오브젝트로 여러개 만들고 싶습니다. 
+
+// 쇼핑몰에 쓸 데이터 : 상품명, 상품가격 
+
+function products (상품명, 가격, 부가세){
+    this.name = 상품명;
+    this.price = 가격;
+    this.부가세 = function(){
+        console.log(this.price * 0.1)
+    }
+}
+
+var products1 = new products('Shirts', 50000, this.부가세 );
+var products2 = new products('pants', 60000);
+
+// 예시2 모든학생 object에 sayHi()함수도 추가하고 싶어요
+
+// var 학생1 = { 
+//     name : 'Kim',
+//     age: 15,
+//     sayHi : function(){
+//         //"안녕하세요 'object에 있는 name'입니다"
+//         console.log('안녕하세요' + this.name + '입니다')
+//     }
+// } 
+
+//예시3 name을 다르게 설정해주고 싶어요 : 파라미터 
+function 기계 (이름, 나이){
+    this.name = 이름;
+    this.age = 나이;
+    this.sayHi = function(){
+        console.log('안녕하세요' + this.name + '입니다')
+    }
+}
+
+// 기계('Park'); //새로운 object 만들 때 이름자리에 Park넣어서 만들어줌
+
+var 학생1 = new 기계('Park', 15);
+var 학생2 = new 기계('Kim');
+
+학생1.sayHi();
+학생2.sayHi();
+
+</script>
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>캐러셀_이미지슬라이드</title>
+    <!-- jQuery 설치 -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <link href="./0405_Carousel.css" rel="stylesheet">
+</head>
+<body>
+    <!-- chapter 코드 3줄로 캐러셀 (이미지 슬라이드) 만들기 -->
+    <!-- one-way 애니메이션
+    시작화면
+    최종화면
+    원할때 최종화면 js
+    transition  -->
+    
+    <!-- 넘치는 부분 숨겨줘 : overflow:hidden -->
+    <div style="overflow:hidden">
+    <div class="slide-container">
+        <div class="slide-box">
+            <img src="./img/car1.png">
+        </div>
+        <div class="slide-box">
+            <img src="./img/car2.png">
+        </div>
+        <div class="slide-box">
+            <img src="./img/car3.png">
+        </div>
+    </div>
+    </div>
+
+    <!-- 파라미터 문법 -->
+    <!-- 각 버튼에 data-slide 속성을 추가 -->
+    <!-- data-slide : 속성값 : 슬라이드가 얼마나 이동할지를 나타내는 값 -->
+    <!-- 버튼 클래스를 slide-button으로 통합하여 하나 이벤트 핸들러 처리 -->
+    <button class="slide-button" data-slide="0">1</button>
+    <button class="slide-button" data-slide="-100">2</button>
+    <button class="slide-button" data-slide="-200">3</button>
+    <!-- 다음버튼 누를때 1번 2번, 2번 3번 -->
+    <button class="next">다음</button>
+    <button class="before">이전</button>
+
+
+    <!-- <button class="slide-1">1</button>
+    <button class="slide-2">2</button>
+    <button class="slide-3">3</button> -->
+
+    <script>
+
+        //Todo : 다음 버튼 
+
+
+        // 확장성 있는 코드
+      
+        var 지금사진 = 1;
+
+
+        $('.before').on('click', function(){
+            $('.slide-container').css('transform', 'translateX(+' + 지금사진 + '00vw)');
+            지금사진 -= 1;
+        })
+    
+        $('.next').on('click', function(){
+            $('.slide-container').css('transform', 'translateX(-' + 지금사진 + '00vw)');
+            지금사진 += 1;
+        })
+
+        $('.slide-2').on('click', function() {
+            // 자바스크립트로 transform: translateX(-100vw); 
+            $('.slide-container').css('transform', 'translateX(-100vw)');
+        });
+
+
+
+
+        // // 지금사진도 업데이트 되야함
+        // var 지금사진 = 1;
+
+        // // 다음버튼 누르면
+        // // "지금 보이는 사진이 1이면 : if' 2번 사진 보여주세요
+        // $('.next').on('click', function(){
+        //     // if(지금 보이는 사진이 1이면){
+        //     //     2번 사진 보여주세요
+        //     // }
+        // // 지금사진 1이면
+        //     if ( 지금사진 == 1 ){
+        // //2번 사진 보여주세요
+        //         $('.slide-container').css('transform', 'translateX(-100vw)');
+        // // 지금사진 변수에 +1 해주세요
+        //          지금사진 += 1; 
+        //     } 
+        //     else if ( 지금사진 == 2) {
+        //         $('.slide-container').css('transform', 'translateX(-200vw)');
+        //         지금사진 += 1;
+        //     } 
+        // });
+
+
+        // 파라미터 문법 : 챗 GPT
+        // slide-button을 클릭하면
+        $('.slide-button').on('click', function() {
+            // $(this) 현재 클릭된 버튼 data('slide') : data-slide라는 데이터 속성의 값
+            // data-slide 값을 가져온 클릭 된 버튼
+            // data-slide="100"인 버튼을 클릭하면 슬라이드위치에는 100이 할당되어 슬라이드가 100vw만큼 이동
+        var 슬라이드위치 = $(this).data('slide');
+        // 'translateX(-지금사진 + vw)' 만큼 이동해주세요~
+        $('.slide-container').css('transform', 'translateX(' + 슬라이드위치 + 'vw)');
+        });
+
+
+
+        // $('.slide-1').on('click', function() {
+        // // 자바스크립트로 transform: translateX(-100vw); 
+        // $('.slide-container').css('transform', 'translateX(0vw)');
+        // });
+
+        // // 버튼2 누르면 최종화면으로 변함
+        // $('.slide-2').on('click', function() {
+        //     // 자바스크립트로 transform: translateX(-100vw); 
+        //     $('.slide-container').css('transform', 'translateX(-100vw)');
+        // });
+
+        // $('.slide-3').on('click', function() {
+        //     // 자바스크립트로 transform: translateX(-100vw); 
+        //     $('.slide-container').css('transform', 'translateX(-200vw)');
+        // });
+
+    
+    </script>
+</body>
+</html>

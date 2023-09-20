@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>01_icon_font(아이콘폰트)</title>
+<!-- 1. 폰트어썸 웹폰트주소  -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+
+<!-- 2. 부트스트랩 아이콘폰트 주소 -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+  <!-- 3. 구글 아이콘폰트 주소 -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+  <style>
+    .fa-apple{
+      color:#f00;
+      font-size:24px;
+    }
+    .fa-bars{font-size:30px;}
+    .icon01{
+      color:#00ff00;
+      font-size:50px;
+    }
+    .icon02, .icon03{
+      font-size:20px;
+    }
+    .icon02{color:#00f;}
+    .icon03{color:#f00;}
+  </style>
+</head>
+<body>
+  <h2>01_icon_font(아이콘폰트)</h2>
+  <p>웹폰트를 사용하여 특수문자를 삽입하듯이 다양한 아이콘을 삽입할 수 있는 기술을 말하며, 아이콘 폰트를 제공하는 업체로는 폰트어썸, 부트스트랩, 구글, XEICON(국산)등이 있다.</p>
+  <p>아이콘 폰트는 기존의 아이콘을 이미지로 삽입하는 sprite image방식의 단점을 보완한 아이콘 삽입방법으로서 다양한 디바이스에서 활용이 가능하고 css를 사용하여 서식을 글자처럼 꾸밀 수 있는 장점이 있다.</p>
+
+  <h3>1. 폰트어썸 아이콘 폰트 사용하기</h3>
+  <i class="fab fa-apple"></i>
+  <span class="fas fa-bars"></span>
+
+  <h3>2. 부트스트랩을 사용하여 아이콘 폰트 사용하기</h3>
+  <span class="glyphicon icon01">&#xe003;</span>
+  <span class="glyphicon glyphicon-trash"></span>
+
+  <h3>3. 구글 웹폰트를 사용하여 아이콘 사용하기</h3>
+  <i class="material-icons icon02">directions_transit</i>
+  <i class="material-icons icon03">access_alarm</i>
+
+
+</body>
+</html>

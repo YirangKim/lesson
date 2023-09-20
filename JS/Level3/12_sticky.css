@@ -1,0 +1,19 @@
+.grey {
+    background: lightgrey;
+    height: 2000px;
+    margin-top: 500px;
+}
+
+.image{
+    float: right;
+    width : 400px;
+    /* sticky : 조건부로 fixed
+    부모박스 넘어서면 해제*/
+    position: sticky;
+    top: 100px;
+}
+
+.text{
+    float: left;
+    width : 300px;
+}

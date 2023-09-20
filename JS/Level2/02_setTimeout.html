@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setTimeout 타이머주는 법</title>
+    <link href="02_setTimeout.css" rel="stylesheet">
+</head>
+<body>
+    <!-- chapter : setTimeout 타이머주는 법 -->
+    <div class="alert alert-danger">
+        <span id="num">5</span>초 이내 구매시 사은품 증정!
+    </div>
+
+
+    <script>
+
+    // Todo : 
+    // 1초 마다 5라는 문자를 1씩 감소
+    // 0이 되면 <div> 안보이게  
+
+    var count = 5;
+    // 클래스 선택자 사용
+    div숨김 = document.querySelector('.alert.alert-danger');
+
+    // 두번 째 방법 
+
+    setInterval(function(){
+        count -= 1;
+        if (count >= 0) {
+            document.querySelector('#num').innerHTML = count;
+        } 
+
+        if (count === 0) {
+            if (div숨김) {
+                div숨김.style.display = 'none';
+            }
+        }
+    }, 500);
+    
+
+    // 첫번 째 방법 : CSS 추가
+
+    // // 1초 마다 코드실행 하고 싶을때 : setInterval
+    // setInterval(function(){
+    //     //1씩 감소
+    //     count -= 1;
+    //     // count가 0보다 크면
+    //     if (count >= 0) {
+    //     // #num 에 count를 넣는다 
+    //         document.querySelector('#num').innerHTML = count;
+    //     } 
+    //     // 0초일 때 
+    //     if (count === 0) { 
+    //     if (div숨김) {
+    //         // 'hidden' 클래스 추가 : div 숨기기  ( classList.add를 사용)
+    //         div숨김.classList.add('hidden');
+    //         }
+    //     }
+    // }, 500);
+
+
+
+    // '함수'를 넣기 : 짧게 정리 가능
+    // setTimeout(function(){}, ms)
+    setTimeout(함수, 1000);
+
+    // 1) 함수만들어 놓고
+    function 함수(){
+        console.log('안녕')
+    }
+
+    // x초 후 코드 실행하려면
+    // setTimeout(function(){ 실행할코드~ }, 기다릴시간);
+    // 1000ms = 1초
+
+    // 1초 후에 안녕 
+    // setTimeout(function(){ console.log('안녕')}, 1000);
+
+    // ??? 5초 후에 <div>를 숨겨주세요 
+        // setTimeout(function(){
+        // $('.alert').hide();
+        // }, 1000)
+
+    
+    // 1초 마다 코드실행 하고 싶을때
+    // setInterval(function(){ 실행할코드~ }, 기다릴시간);
+    // setInterval(function(){ console.log('안녕')}, 1000);
+    
+    
+    </script>
+</body>
+</html>

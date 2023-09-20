@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>getter, setter</title>
+      <!-- Bootstrap CSS -->
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  
+      <!-- jquery 설치 -->
+      <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+      <!-- CSS -->
+      <link href="#" rel="stylesheet">
+</head>
+
+<body>
+<!-- chapter : getter, setter 대체 왜 쓰는지 알아보기 -->
+
+<script>
+
+
+// class에서 사용하는 get/set
+class 사람 {
+    constructor(){
+        this.name = 'Park';
+        this.age = 20;
+    }
+    get nextAge(){
+        return this.age + 1
+    }
+    set setAge(나이){
+        this.age = 나이;
+    }
+}
+
+var 사람1 = new 사람 ();
+
+// // Mission : 내년 age를 알고 싶음
+// // 함수는 만들어 object데이터 다루는 이유
+// // 1 object 자료가 복잡할 때 이득
+// // 2 object 자료 수정시 편리
+// // 데이터를 꺼내거나/수정하거나 그럴 때 편리&실수방지&관리가능
+// // 복잡한 소괄호 꼴보기 싫다면 set/ get
+// // get함수들(getter) : return있어야함 
+// // set함수들(setter) : 파라미터가 1개 있어야함
+
+//   var 사람 = {
+//     name : 'Park',
+//     age : 30,
+//     // get은 데이터 저장하는 함수에
+//     get nextAge(){
+//     return this.age + 1  
+//     },
+//     // set은 데이터 꺼내쓰는 함수
+//     set setAge(나이){
+//         this.age = parseInt(나이); //parseInt 문자를 숫자로
+//     }
+//   }
+
+// // age라는 자료를 꺼내고 싶다면?
+
+// 사람.nextAge = '20';
+
+</script>
+
+</body>
+</html>

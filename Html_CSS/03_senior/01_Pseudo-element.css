@@ -1,0 +1,38 @@
+
+/* :pseudo-class 다른상태일때
+::pseudo-class 내부의 일부분만 스타일 줄때 */
+
+/* ::after 맨끝에 
+::before */
+
+.pseudo::first-letter {
+ color:red;
+ font-size: 30px;
+}
+
+.pseudo::first-line {
+ color:blue;
+ font-size: 30px;
+}
+
+.pseudo::after {
+    content: '안녕';
+    color: pink;
+    font-size: 30px;
+}
+
+.pseudo::before {
+    content: '안녕하세요';
+    color: skyblue;
+    font-size: 50px;
+}
+
+.input-file::file-selector-button{ 
+    background:skyblue;
+    border:none;
+    padding:20px;
+    color:white
+}
+
+.input-file::file-selector-button:hover{ background: blue;
+}

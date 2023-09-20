@@ -1,0 +1,58 @@
+.wrap {
+    width: 800px;
+    height:500px;
+    border:2px solid black;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.left {
+    width:70%;
+    float:left;
+}
+
+.profile {
+    width:50px;
+    display:block;
+    float:left;
+}
+.title_info {
+    float:left;
+}
+
+.content {
+    clear: both;
+    /* margin-top: 70px; */
+}
+
+.right {
+    width:30%;
+    height:250px;
+    float:left;
+    background:blue;
+
+}
+
+.right > img {
+    width:300px;
+}
+
+
+h4, h5, p {
+  margin: 5px;
+}
+
+/* 가로로 배치 */
+.navbar li {
+    display: inline-block;
+    width:60px;
+    text-align: center;
+    background: #eee;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.navbar a {
+    font-size: 16px;
+    text-decoration: none;
+}

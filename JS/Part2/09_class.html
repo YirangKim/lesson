@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>class</title>
+      <!-- Bootstrap CSS -->
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  
+      <!-- jquery 설치 -->
+      <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+      <!-- CSS -->
+      <link href="#" rel="stylesheet">
+</head>
+
+<body>
+<!-- chapter : 객체지향4. ES6방식으로 안쉽게 구현하는 상속기능 class -->
+
+<script>
+
+  // 📌 상속기능을 구현하는 ES6방법 : class
+  // 객체지향 문법 왜 쓰냐면 : object 여러개 만들어 쓰려고 하는 것
+  // class 문법으로 구현하는 constructor, prototype 이용
+  // 기존 function 문법보다 더 보기쉽게 표현
+
+  //constructor 신문법
+  //ES6 class 키워드로 구현하는 constructor 기계만들기
+    class 엄마아빠 {
+      constructor(){
+        this.name = 'Kim';
+      }
+    }
+
+    var 자식들 = new 엄마아빠 (); //자식 부모에 물려받음
+    자식들.__proto__ // 부모 prototype(부모 유전자)가 출력됨
+
+  class 부모 {
+    //파라미터 aaa
+    constructor(aaa){ //파라미터 aaa
+    this.name = aaa; //파라미터 aaa
+    // 함수를 추가하고 싶으면
+    //1 constructor에 추가하든가 : 자식이 직접 
+    this.sayHi = function(){
+        console.log('hello')}
+    }
+    // 2 여기에 쓰든가 : 부모.prototype에 추가됨 -> 모든자식들이 공통적으로 사용 , 관리 편함
+    sayHi(){
+        console.log('hello')
+    }
+    // 함수 하나 더 추가
+    sayHello(){
+        console.log('hello')
+    }
+
+  }
+
+  //함수 추가 prototype 직접 수정
+  부모.prototype.sayHello = function(){}
+
+  var 자식 = new 부모('asdf'); //파라미터 
+  자식.__proto__  //얘의 부모 prototype(부모유전)가 출력됨
+
+  //부모님의 prototype을 출력해주세요 = prototype
+  Object.getPrototypeOf(자식); // 더 보기쉬움
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alert박스</title>
+    <link rel="stylesheet" href="02_Alertbox.css">
+</head>
+<body>
+
+    <!-- chapter : 동적 UI 만드는 스텝 (Alert 박스 만들기) -->
+    <!-- chapter : 자바스크립트 function 문법 사용법 -->
+
+    <!-- UI만드는 법칙 : step
+    1. HTML/CSS미리 디자인 
+    2. 필요할떄 보여달라고 코드짬 -->
+
+
+    <div class="alert-box" id="alert">
+    <p id="title">알림창임</p>
+    <!-- 알림창 닫기 -->
+    <button id="close">닫기</button>
+    </div>
+
+    <!-- document.getElementById('1)바꿀요소 id').2)무엇을 = ' 3)어떻게 ' ; -->    
+    <!-- onclick하면 alert박스 보여주셈
+     css display: none;
+     Javascript display: block; -->
+
+
+
+    <!-- function 적용 -->
+    <button onclick="아이디알림창()">버튼1</button>
+
+    <button onclick="비번알림창()">버튼2</button>
+    
+    <!-- function 적용 전 -->
+    <!-- <button onclick="document.getElementById('alert').style.display ='block';">버튼</button> -->
+
+    <script>
+
+     // 닫기버튼 누르면 모달창 숨기기  
+     document.getElementById('close').addEventListener('click', function(){
+        document.getElementById('alert').style.display = 'none';
+    });
+
+
+    //📌 Mission : 버튼1 누르면 '아이디입력하세요' 라는 alert 박스가 떠야함
+    // 버튼2 누르면 '비번입력하세요' 라는 alert 박스가 떠야함 
+
+        // function 아이디알림창(){}
+        // //버튼1누르면
+        // document.getElementById('button').addEventListener('click',function(){
+        // p태그 내용 아이디입력하세요 
+
+        function 아이디알림창(){
+            document.getElementById('title').innerHTML = '아이디입력하셈';
+            //alert창 띄우기
+            document.getElementById('alert').style.display = 'block';
+        }
+
+
+        function 비번알림창(){
+            document.getElementById('title').innerHTML = '비번입력하셈';
+            //alert창 띄우기
+            document.getElementById('alert').style.display = 'block';
+        }
+
+
+    // 알림창 닫기 : display: none;
+    // 버튼 누르면 알림창 닫혀야함 : 숨기기 display: none; 
+
+    function 알림창열기(구멍){
+    document.getElementById('alert').style.display = 구멍;
+    }
+
+</script>
+
+<!-- 
+에러 
+1. Javascript 하단에 작성
+2. 셀렉터 오타 주의
+3. 기본문법 오타  -->
+
+
+</body>
+</html>
